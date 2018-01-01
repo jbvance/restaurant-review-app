@@ -17,10 +17,11 @@ mongoose.connection.on('error', (err) => {
   console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
 });
 
-// READY?! Let's go!
+// READY? Let's go
+//Import all of the models - you only have to do this once
+require('./models/Store');
 
-
-// Start our app!
+// Start our app
 const app = require('./app');
 app.set('port', process.env.PORT || 7777);
 const server = app.listen(app.get('port'), () => {
