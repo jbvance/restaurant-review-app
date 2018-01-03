@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Takes the raw requests and turns them into usable properties on req.body
 app.use(bodyParser.json());
+// The extended: true allows you to have nested inputs, like location[address] in _storeForm.pug
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Exposes a bunch of methods for validating data. Used heavily on userController.validateRegister
